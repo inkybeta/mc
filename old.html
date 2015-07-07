@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Minecraft</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Warm Up Activity</h3>
+					<p>Try starting the day by doing what we did last time</p>
+					<ol>
+						<li>Open your text editor and create a program</li>
+						<li>Try running a program that prints anything.</li>
+						<li>Then try creating a minecraft object by using minecraft.Minecraft.create() and store it in a variable called mc.</li>
+						<li>Try posting to chat. If you feel like you don't remember any of this, then the answer is on the next page.</li>
+						<li>Save and run the program</li>
+					</ol>
+				</section>
+				<section>
+					<h3>The Answers :|</h3>
+					<pre><code>
+from mcpi import minecraft
+print('Hello')
+mc = minecraft.Minecraft.create()
+mc.postToChat('Hello')
+					</code></pre>
+				</section>
+				<section>
+					<h3>So what does each line mean?</h3>
+					<pre class="fragment"><code>
+from mcpi import minecraft
+					</code></pre>
+					<p class="fragment">This line takes minecraft from someone else.</p>
+					<pre class="fragment"><code>
+print('Hello')
+					</code></pre>		
+					<p class="fragment">This line prints Hello.</p>		
+					<pre class="fragment"><code>
+mc = minecraft.Minecraft.create()
+					</code></pre>
+					<p class="fragment">This line creates the minecraft object.</p>
+					<pre class="fragment"><code>
+mc.postToChat('Hello')
+					</code></pre>
+					<p class="fragment">This line actually posts to the chat.</p>
+				</section>
+				<section>
+					<h3>Quick Review</h3>
+					<p>What does putting things in quotes do? What is a string?</p>
+					<p>How do you give something to a method? What is a method</p>
+					<pre class="fragment"><code>
+method('Hello')
+					</code></pre>
+					<p>What is a number? How do you make one in Python?</p>
+					<p>What is an object?</p>
+					<p>What is the terminal?</p>
+				</section>
+				<section data-background="http://www.wpclipart.com/signs_symbol/safety_signs/caution_sign_w_exclamation.png">
+					<h3 style="color:black;">The following parts will be boring. Please try to stay awake. </h3>
+				</section>
+				<section>
+					<h3>The Old Terminal</h3>
+					<p>This was how computers used to work. They didn't use mice and only used the keyboard. How did they get things done?</p>
+					<p style="font-size:20px" class="fragment">
+						The terminal uses commands to get things done. It gives us full control over the system. Many things that you can click just use the terminal behind the scenes.
+						It can be quite useful. When using the terminal, you use it in a directory and "work" in it. First, you type your command. Then, you give a space and type the stuff you want 
+						to give to the command. This terminal can be accessed by clicking the black rectangle at the top or going to Menu->Accessories->Terminal. An example of a command is below.
+					</p>
+					<pre class="fragment"><code>
+# Lists everything in the current directory
+dir
+# Creates a directory named hello
+mkdir hello
+					</code></pre>
+				</section>
+				<section>
+					<h3>Our Commands</h3>
+					<p>
+						The terminal is a place where you can enter commands directly to the computer. It doesn't need fancy graphics and it is where we run our program. We can go to different parts
+						of the computer by using the "cd" command. "python" is how we run our program.
+					</p>
+				</section>
+				<section>
+					<h3>Objects</h3>
+					<p>What is an object in real life. Can we create a definition?</p>
+					<p class="fragment">
+						An object is basically something with properties like color, texture, and shape. In Python, these can be held in different types of information. It can also have a method
+						attached. Look at the example below. We can access the some property of an object by using the . (literally!)
+					</p>
+					<pre class="fragment"><code>
+object.property
+object.method()
+mc = minecraft.Minecraft.create()
+					</code></pre>
+					<p>Based on this, what do you think mc is? What is minecraft and what does it represent? Is it an object, a number, or a string?</p>
+				</section>
+				<section>
+					<h3>A Bit Of Addition</h3>
+					<p>Ok time for a bit more boring stuff before we can get back to minecraft</p>
+					<p>What should the code below print?</p>
+					<pre><code>
+print('2' + '2')
+print(2 + 2)
+					</code></pre>
+				</section>
+				<section>
+					<h3>Finally, Back to the Minecraft (with Doc Brown)(Anyone who gets that reference is amazing)</h3>
+					<p>Ok, so we are going to learn some other things about the minecraft object that we have created. I know the example looks like a wall of text.</p>
+					<pre><code>
+from mcpi import minecraft
+mc = minecraft.Minecraft.create()
+# Hastags begin comments and are ignored!
+# Sets the block at x, y, and z to the block id
+mc.setBlock(x, y, z, blockId)
+# Have every line of code begin on the next line
+# This gets the position of the player as three variables
+x, y, z = mc.player.getPos()
+					</code></pre>
+				</section>
+				<section>
+					<h3>One Last Thing</h3>
+					<p>Try seeing some of this stuff for yourself. I know it can get boring at times but hang in there!</p>
+					<div class="fragment">
+						<p>Any questions?</p>
+						<p>If you need help, please look through the examples again on this presentation.</p>
+					</div>
+					<p class="fragment">Also, when using setBlock(), you need to have someone reconnect to see what you have made.</p> 
+				</section>
+				<section>
+					<h3>Some more shtuff</h3>
+					<p>So there's this guy named Fred. He has a secret that he wants to store on his program! However, to access it, he needs a password. How would you write this?</p>
+					<div class="fragment">
+						<p>So we need to learn 2 things to accomplish this.</p>
+						<ul>
+							<li>How to get the password from the user.</li>
+							<li>How to check if the password is correct.</li>
+						</ul>
+					</div>
+					<pre class="fragment"><code>
+password = input('What is the password: ')
+if password == "password":
+	# Do some stuff
+					</code></pre>
+				</section>
+				<section>
+					<h3>Some more information</h3>
+					<p>Ok so the : signifies a block of code. Lines following it must have an extra tab.</p>
+					<p>In addition, input is raw_input() in Python 2</p>
+				</section>
+				<section>
+					<h3>The while loop</h3>
+					<p>Let's say you need to execute something over and over again. How would you do this? (Don't just copy and paste your code several times?)</p>
+					<pre class="fragment"><code>
+while True:
+	execute()
+					</code></pre>
+					<p class="fragment">This example will never stop</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				
+				multiplex: {
+					secret: null,
+					id: "7aee5cbf41b51e7d",
+					url: "revealjs.jit.su"
+				},
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'https://cdn.socket.io/socket.io-1.3.5.js', async: true },
+					{ src: 'plugin/multiplex/client.js', async: true },
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

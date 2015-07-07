@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		
@@ -24,6 +24,12 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
+		<style>
+			.span{
+				color: blue;
+			}
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -33,141 +39,194 @@
 	<body>
 
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h3>Warm Up Activity</h3>
-					<p>Try starting the day by doing what we did last time</p>
+					<h3>Warmup!</h3>
 					<ol>
-						<li>Open your text editor and create a program</li>
-						<li>Try running a program that prints anything.</li>
-						<li>Then try creating a minecraft object by using minecraft.Minecraft.create() and store it in a variable called mc.</li>
-						<li>Try posting to chat. If you feel like you don't remember any of this, then the answer is on the next page.</li>
-						<li>Save and run the program</li>
+						<li>Welcome! Try doing what we learned last week by first creating a minecraft object (Remember those?)</li>
+						<li>Open Minecraft Pi</li>
+						<li>Make your program get the position of the player, set the block where the player is to 10, and postToChat</li>
+						<li>Try running your program</li>
 					</ol>
+					<pre><code>
+# Remember to import minecraft
+from mcpi import minecraft
+# Remember that an object is something with properties. Now do you remember how to get one!
+mc.postToChat('This is a hint')
+					</code></pre>
 				</section>
 				<section>
-					<h3>The Answers :|</h3>
+					<h3>The Answer (There may be changes)</h3>
 					<pre><code>
 from mcpi import minecraft
-print('Hello')
+# Variables can have different names
 mc = minecraft.Minecraft.create()
-mc.postToChat('Hello')
-					</code></pre>
-				</section>
-				<section>
-					<h3>So what does each line mean?</h3>
-					<pre class="fragment"><code>
-from mcpi import minecraft
-					</code></pre>
-					<p class="fragment">This line takes minecraft from someone else.</p>
-					<pre class="fragment"><code>
-print('Hello')
-					</code></pre>		
-					<p class="fragment">This line prints Hello.</p>		
-					<pre class="fragment"><code>
-mc = minecraft.Minecraft.create()
-					</code></pre>
-					<p class="fragment">This line creates the minecraft object.</p>
-					<pre class="fragment"><code>
-mc.postToChat('Hello')
-					</code></pre>
-					<p class="fragment">This line actually posts to the chat.</p>
-				</section>
-				<section>
-					<h3>Quick Review</h3>
-					<p>What does putting things in quotes do? What is a string?</p>
-					<p>How do you give something to a method? What is a method</p>
-					<pre class="fragment"><code>
-method('Hello')
-					</code></pre>
-					<p>What is a number? How do you make one in Python?</p>
-					<p>What is an object?</p>
-					<p>What is the terminal?</p>
-				</section>
-				<section data-background="http://www.wpclipart.com/signs_symbol/safety_signs/caution_sign_w_exclamation.png">
-					<h3 style="color:black;">The following parts will be boring. Please try to stay awake. </h3>
-				</section>
-				<section>
-					<h3>The Old Terminal</h3>
-					<p>This was how computers used to work. They didn't use mice and only used the keyboard. How did they get things done?</p>
-					<p style="font-size:20px" class="fragment">
-						The terminal uses commands to get things done. It gives us full control over the system. Many things that you can click just use the terminal behind the scenes.
-						It can be quite useful. When using the terminal, you use it in a directory and "work" in it. First, you type your command. Then, you give a space and type the stuff you want 
-						to give to the command. This terminal can be accessed by clicking the black rectangle at the top or going to Menu->Accessories->Terminal. An example of a command is below.
-					</p>
-					<pre class="fragment"><code>
-# Lists everything in the current directory
-dir
-# Creates a directory named hello
-mkdir hello
-					</code></pre>
-				</section>
-				<section>
-					<h3>Our Commands</h3>
-					<p>
-						The terminal is a place where you can enter commands directly to the computer. It doesn't need fancy graphics and it is where we run our program. We can go to different parts
-						of the computer by using the "cd" command. "python" is how we run our program.
-					</p>
-				</section>
-				<section>
-					<h3>Objects</h3>
-					<p>What is an object in real life. Can we create a definition?</p>
-					<p class="fragment">
-						An object is basically something with properties like color, texture, and shape. In Python, these can be held in different types of information. It can also have a method
-						attached. Look at the example below. We can access the some property of an object by using the . (literally!)
-					</p>
-					<pre class="fragment"><code>
-object.property
-object.method()
-mc = minecraft.Minecraft.create()
-					</code></pre>
-					<p>Based on this, what do you think mc is? What is minecraft and what does it represent? Is it an object, a number, or a string?</p>
-				</section>
-				<section>
-					<h3>A Bit Of Addition</h3>
-					<p>Ok time for a bit more boring stuff before we can get back to minecraft</p>
-					<p>What should the code below print?</p>
-					<pre><code>
-print('2' + '2')
-print(2 + 2)
-					</code></pre>
-				</section>
-				<section>
-					<h3>Finally, Back to the Minecraft (with Doc Brown)(Anyone who gets that reference is amazing)</h3>
-					<p>Ok, so we are going to learn some other things about the minecraft object that we have created. I know the example looks like a wall of text.</p>
-					<pre><code>
-from mcpi import minecraft
-mc = minecraft.Minecraft.create()
-# Hastags begin comments and are ignored!
-# Sets the block at x, y, and z to the block id
-mc.setBlock(x, y, z, blockId)
-# Have every line of code begin on the next line
-# This gets the position of the player as three variables
 x, y, z = mc.player.getPos()
+mc.setBlock(x, y, z, 10)
+mc.postToChat('Anything here!')
 					</code></pre>
 				</section>
 				<section>
-					<h3>One Last Thing</h3>
-					<p>Try seeing some of this stuff for yourself. I know it can get boring at times but hang in there!</p>
+					<h3>A Little Extra</h3>
+					<p>Words that are part of a language and do something are called <i>keywords</i></p>
+					<p>To help you find these, they will be colored. Try pointing them out.</p>
+					<p>Vocabulary is <i>italicized</i></p>
+				</section>
+				<section>
+					<section>
+						<h3>Recap! (If you have a question, ask it!)</h3>
+						<ol>
+							<li class="fragment">In order to get a package, use the keyword import. Each line of code begins on a new line.</li>
+							<li class="fragment">Variables hold information. They can have any name that doesn't have special characters</li>
+							<li class="fragment">There are different types of variables such as numbers and string</li>
+							<li class="fragment">Hashtags are used to comment a line (These don't do anything)</li>
+							<li class="fragment">Methods are pieces of code that you can run. They are in the form of nameOfMethod()</li>
+							<li class="fragment">Objects are a type of variable that have properties and methods. The things inside can be accessed by using .</li>
+						</ol>
+					</section>
+					<section>
+						<h3>A Little More Recap</h3>
+						<p>Try type code that will access the property "hello" from the variable (object) "o"</p>
+						<textarea style="width: 800px; height: 200px; resize:none; font-size: 24px;"></textarea>
+					</section>
+					<section>
+						<h3>Ok Final Part of Recap</h3>
+						<p>So this is the last part! </p>
+						<ol>
+							<li class="fragment">There are five operations: + - / * %. Do you remember what each do?</li>
+							<li class="fragment">The console is used to run our application.</li>
+							<li class="fragment">python is a command used to run our application</li>
+							<li class="fragment">print(string here) is a <i>method</i> used to print something to the terminal</li>
+							<li class="fragment">input(string here) is used to a <i>string</i> from the user from the terminal</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Are there any questions?</h2>
+						<p class="fragment">So is there anyone who remembers the <i>terminal</i> command that changes the <i>working directory</i></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Booleans</h3>
+						<p>So there is a new type of variable that we are introducing today! The boolean</p>
+						<p>It can have the value of true or false. Try telling if the following statements are true or false.</p>
+						<ul>
+							<li>Apples grow on trees</li>
+							<li>1 + 1 = 3</li>
+							<li>The sky is green</li>
+							<li>You are in San Francisco</li>
+						</ul>
+					</section>
+					<section>
+						<p>In python, true and false can be <i>assigned</i> to a variable like this:</p>
+						<pre class="fragment"><code>
+# Both create a variable meaning True
+x = True
+x = 1
+# Both create a variable meaning False
+x = False
+x = 0
+						</code></pre>
+						<p class="fragment">Notice the uppercase</p>
+					</section>
+					<section>
+						<h3>Comparing things!</h3>
+						<p class="fragment">You can compare things that are the same type! Use the == to compare things in Python. It will give back a <i>boolean</i></p>
+						<pre class="fragment"><code>
+firstThing == secondThing 
+# True
+"apple" == "apple"
+# False
+"apple" == "orange"
+						</code></pre>
+					</section>
+					<section>
+						<h3>Grouping things</h3>
+						<div class="fragment">
+							<p>What will the following print?</p>
+							<pre><code>
+print(2 + 3 * 5)
+							</code></pre>
+							<p class="fragment">This should print 17 because 3 * 5 will be done first</p>
+						</div>
+						<p class="fragment">You can also use () to group statements together.</p>
+						<pre class="fragment"><code>
+# Should print 25
+print((2 + 3) * 5)
+						</code></pre>
+					</section>
+					<section>
+						<section>
+							<h3>Controlling the flow</h3>
+							<p>A new keyword called if will be used to control our application</p>
+							<p class="fragment">A ":" is used to tell python that there is a block of code coming</p>
+							<p class="fragment">This block of code must be indented with a tab.</p>
+							<pre class="fragment"><code>
+if(True):
+	# Then this will happen and go on!
+if(False):
+	# Then this will not happen and go on!
+x = True:
+if(x):
+	#What will happen here?
+							</code></pre>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h3>Looping and Looping and Looping and Looping</h3>
+					<p class="fragment">You can repeat a piece of code again and again and again! There are two types.</p>
+					<pre class="fragment"><code>
+x = True
+while(x):
+	#This will happen until x is False
+for x in range(1, 10)
+	#This will happen 10 times. Each time, x will grow from 1 to 2 to 3
+for x in range(2, 11)
+	#This will happen 10 times also
+					</code></pre>
+				</section>
+				<section>
+					<h3>Lists</h3>
+					<p>Lists are collections of objects. You can add also to it. We use the [] notation to get an item.</p>
+					<pre><code>
+# An array of 4 numbers
+numbers = [1, 2, 3, 4]
+# Prints 1
+print(numbers[0])
+					</code></pre>
+					<p class="fragment">Notice that the first element is number 0</p>
+					<p class="fragment">There is a method called len that returns the number of elements in a list. Try using it to print every item in a list</p>
+				</section>
+				<section>
+					<h3>Quick Break!</h3>
+					<h3>Any questions?</h3>
+				</section>
+				<section>
+					<h3>So for the fun part!</h3>
 					<div class="fragment">
-						<p>Any questions?</p>
-						<p>If you need help, please look through the examples again on this presentation.</p>
+						<p>For the player object under the minecraft object (Access it by using mc.player)</p>
+						<p>There are several new methods I want you to try: setPos(x, y, z) (These are the things you need to give it.)</p>
 					</div>
-					<p class="fragment">Also, when using setBlock(), you need to have someone reconnect to see what you have made.</p> 
+					<div class="fragment">
+						<p>Try creating an application that allows you to type something in and posts it to chat.</p>
+					</div>
+					<pre class="fragment"><code>
+# This is an example of the program
+from mcpi import minecraft
+mc = minecraft.Minecraft.create()
+while(True):
+	x = input("Type something: ")
+	mc.postToChat(x)
+					</code></pre>
 				</section>
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
 				progress: true,
@@ -175,8 +234,8 @@ x, y, z = mc.player.getPos()
 				center: true,
 				
 				multiplex: {
-					secret: "14356087212439678063",
-					id: "7aee5cbf41b51e7d",
+					secret: "14362159539777504886",
+					id: "60406ced417a9c7d",
 					url: "revealjs.jit.su"
 				},
 
